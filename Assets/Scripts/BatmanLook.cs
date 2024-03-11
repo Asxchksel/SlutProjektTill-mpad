@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class BatmanLook : MonoBehaviour
+public class lookController : MonoBehaviour
 {
     GameObject head;
 
@@ -31,5 +32,9 @@ public class BatmanLook : MonoBehaviour
         xCameraRotation += degreesX;
         xCameraRotation = Mathf.Clamp(xCameraRotation, -angleLimiter, angleLimiter);
         head.transform.localEulerAngles = new(xCameraRotation, 0, 0);
-    }   
+    }
+
+    void Start(){}
+
+    void Update(){}
 }
