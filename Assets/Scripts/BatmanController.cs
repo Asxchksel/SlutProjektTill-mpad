@@ -15,6 +15,14 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     float gravityMultiplier = 4;
 
+    [SerializeField]
+    float dashSpeed = 20;
+
+    bool dashPressed = false;
+    
+    int dashTimerReset = 3;
+    int dashTimer = 0;
+
     float velocityY = -1f;
 
     bool jumpPressed = false;
@@ -35,14 +43,27 @@ public class MovementController : MonoBehaviour
             }
         }
 
+        if(dashTimer > dashTimerReset){
+            if(dashPressed){
+                movementSpeed = 20f;
+                dashPressed = false;
+                dashTimer = 0;
+            }
+        }       
+
+
         velocityY += Physics.gravity.y * Time.deltaTime * gravityMultiplier;
         movement.y = velocityY;
 
         characterController.Move(movement * Time.deltaTime);
         
+        dashTimer++;
         jumpPressed = false;
+        dashPressed = false;
+        movementSpeed = 5f;
     }
 
     void OnMove(InputValue value) => inputVector = value.Get<Vector2>();
     void OnJump(InputValue value) => jumpPressed = true;
+    void OnDash(InputValue value) => dashPressed = true;
 }
