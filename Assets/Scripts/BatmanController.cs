@@ -16,12 +16,12 @@ public class MovementController : MonoBehaviour
     float gravityMultiplier = 4;
 
     [SerializeField]
-    float dashSpeed = 20;
+    float dashSpeed = 20f;
 
     bool dashPressed = false;
     
     int dashTimerReset = 3;
-    int dashTimer = 0;
+    float dashTimer = 0;
 
     float velocityY = -1f;
 
@@ -43,12 +43,11 @@ public class MovementController : MonoBehaviour
             }
         }
 
-        if(dashTimer > dashTimerReset){
-            if(dashPressed){
-                movementSpeed = 20f;
-                dashPressed = false;
-                dashTimer = 0;
-            }
+        if(dashTimer > dashTimerReset && dashPressed){
+            dashPressed = false;
+            dashTimer = 0;
+            movementSpeed = dashSpeed;
+            characterController.Move(movement * Time.deltaTime * movementSpeed);
         }       
 
 
@@ -57,10 +56,11 @@ public class MovementController : MonoBehaviour
 
         characterController.Move(movement * Time.deltaTime);
         
-        dashTimer++;
+        dashTimer += Time.deltaTime;
         jumpPressed = false;
         dashPressed = false;
         movementSpeed = 5f;
+        dashTimer++;
     }
 
     void OnMove(InputValue value) => inputVector = value.Get<Vector2>();
