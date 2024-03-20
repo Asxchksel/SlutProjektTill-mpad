@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour
 
     bool dashPressed = false;
     
-    int dashTimerReset = 3;
+    int dashTimerReset = 5;
     float dashTimer = 0;
 
     float velocityY = -1f;
@@ -44,10 +44,10 @@ public class MovementController : MonoBehaviour
         }
 
         if(dashTimer > dashTimerReset && dashPressed){
-            dashPressed = false;
-            dashTimer = 0;
             movementSpeed = dashSpeed;
             characterController.Move(movement * Time.deltaTime * movementSpeed);
+            dashPressed = false;
+            dashTimer = 0;
         }       
 
 
@@ -60,7 +60,7 @@ public class MovementController : MonoBehaviour
         jumpPressed = false;
         dashPressed = false;
         movementSpeed = 5f;
-        dashTimer++;
+        dashTimer += Time.deltaTime;
     }
 
     void OnMove(InputValue value) => inputVector = value.Get<Vector2>();
