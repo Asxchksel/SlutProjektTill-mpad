@@ -282,14 +282,14 @@ MonoBehaviour:
   - m_Vertices: 03000000
   m_SharedTextures: []
   m_Positions:
-  - {x: 0.0000004209578, y: 0.0001, z: -2.9027667}
+  - {x: 0.0000004209578, y: 0.0001, z: -58.27915}
   - {x: 0.0000004209578, y: 0.0001, z: 14.965689}
-  - {x: 20.834887, y: 0.0001, z: -2.9027667}
+  - {x: 20.834887, y: 0.0001, z: -58.27915}
   - {x: 20.834887, y: 0.0001, z: 14.965689}
   m_Textures0:
-  - {x: 0.0000004209578, y: -2.9027667}
+  - {x: 0.0000004209578, y: -58.27915}
   - {x: 0.0000004209578, y: 14.965689}
-  - {x: 20.834887, y: -2.9027667}
+  - {x: 20.834887, y: -58.27915}
   - {x: 20.834887, y: 14.965689}
   m_Textures2: []
   m_Textures3: []
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 1341494132}
-  m_VersionIndex: 2217
+  m_VersionIndex: 2907
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4605,13 +4605,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875555409}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.99995923, z: -0, w: -0.009032822}
   m_LocalPosition: {x: -0.003, y: 0.592, z: -0.031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1560023241}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 181.035, z: 0}
 --- !u!81 &875555411
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6141,8 +6141,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 4
     localAABB:
-      m_Center: {x: 10.417443, y: 0.0001, z: 6.031461}
-      m_Extent: {x: 10.417443, y: 0, z: 8.934228}
+      m_Center: {x: 10.417443, y: 0.0001, z: -21.65673}
+      m_Extent: {x: 10.417443, y: 0, z: 36.622417}
   m_Shapes:
     vertices: []
     shapes: []
@@ -6221,7 +6221,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 192
-    _typelessdata: 0000e23417b7d138eec639c0000000000000803f000000000000803f0000000000000000000080bf0000e234eec639c00000e23417b7d13876736f41000000000000803f000000000000803f0000000000000000000080bf0000e23476736f41d9ada64117b7d138eec639c0000000000000803f000000000000803f0000000000000000000080bfd9ada641eec639c0d9ada64117b7d13876736f41000000000000803f000000000000803f0000000000000000000080bfd9ada64176736f41
+    _typelessdata: 0000e23417b7d138d91d69c2000000000000803f000000000000803f0000000000000000000080bf0000e234d91d69c20000e23417b7d13876736f41000000000000803f000000000000803f0000000000000000000080bf0000e23476736f41d9ada64117b7d138d91d69c2000000000000803f000000000000803f0000000000000000000080bfd9ada641d91d69c2d9ada64117b7d13876736f41000000000000803f000000000000803f0000000000000000000080bfd9ada64176736f41
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -6275,8 +6275,8 @@ Mesh:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: 10.417443, y: 0.0001, z: 6.031461}
-    m_Extent: {x: 10.417443, y: 0, z: 8.934228}
+    m_Center: {x: 10.417443, y: 0.0001, z: -21.65673}
+    m_Extent: {x: 10.417443, y: 0, z: 36.622417}
   m_MeshUsageFlags: 0
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
@@ -7012,6 +7012,7 @@ MonoBehaviour:
   movementSpeed: 5
   jumpForce: 10
   gravityMultiplier: 4
+  dashSpeed: 500
 --- !u!114 &1560023239
 MonoBehaviour:
   m_ObjectHideFlags: 0
